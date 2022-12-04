@@ -4,13 +4,18 @@
 # Fun fact
 The predecessor of ElasticSearch was called Compass. It was first released on 2004 and replaced with ElasticSearch on 2010.
 
-# Overview
-The intention behind this repository was to be able to spawn ELK local testing environment fast and without any extra hassle.
 
-# Prerequsites
+# Using this repository
+The intention behind this repository was to be able to spawn ELK local testing environment fast and without any extra hassle.
+This repository contains configuration to run testing ELK clusters on __Docker__
+
+To start using `docker-compose` configuration provided by this repository it is recommended to clone (`git clone https://github.com/raulsiim/elastic-local-cluster.git`) the repository to a local computer or download the contents of this repo by other means.
+Docker compose configuration is using `logstash` sub-folders, thus the folder (including sub-folders) must be present in the root folder where docker-compose files are copied.
+
+## Installing prerequsites
 Local computer must have Docker and Docker Compose installed.
 
-## Verifying Docker installation
+### Verifying Docker installation
 Open a terminal and run commands:
 ```
 $ docker --version
@@ -26,19 +31,25 @@ $ docker-compose --version
 docker-compose version 1.29.2, build unknown
 ```
 
-## Windows installation instructions
+### Windows installation instructions
 Official documentation on how to install Docker on Windows OS can be found [here](https://docs.docker.com/desktop/install/windows-install/).
 An excellent and easy to follow guide can be found also [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows).
 
-## MacOS installation guide
+__Important__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! More details is described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_windows_with_docker_desktop_wsl_2_backend).
+
+### MacOS installation guide
 Official documentation how to install Docker in MacOS can be found [here](https://docs.docker.com/desktop/install/mac-install/).
 An excellent and easy to follow guide can be found also [here](https://runnable.com/docker/install-docker-on-macos).
 
-## Linux
+__Important__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! For MacOS described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_macos_with_docker_for_mac).
+
+### Linux
 You are an advanced user, a king, a queen of computers, if you will. Surely you don't need a step-by-step guide to tell you how to install stuff :smirk:
 
+__An important hint__: It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! For Linux described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_linux).
+
 # Managing the services
-For things to run smoodly it is required to start `cluster01` first. `cluster01.yml` has configuration to start the network named `elknet` and other containers connect to that network.
+For things to run smoodly it is required to start `cluster01` first. `cluster01.yml` has configuration to start the network named `cluster01_default` and other containers connect to that network.
 
 ## Starting the services
 ```
@@ -54,3 +65,9 @@ $ docker-compose -f cluster02.yml -p cluster02 down
 $ docker-compose -f logstash.yml -p logstash down
 $ docker-compose -f cluster01.yml -p cluster01 down
 ```
+# Accessing Kibana
+Hopefully everything started up and Kibana is responding on address: `localhost:5601`
+Username is: elastic
+Password is: elastic
+
+Username and password can be changed in the `.env` file
