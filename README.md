@@ -35,13 +35,13 @@ docker-compose version 1.29.2, build unknown
 Official documentation on how to install Docker on Windows OS can be found [here](https://docs.docker.com/desktop/install/windows-install/).
 An excellent and easy to follow guide can also be found [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows).
 
-__Important!!!__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! The issue is described in more details [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_windows_with_docker_desktop_wsl_2_backend).
+__Important!!!__ It is necessary to set `vm.max_map_count=262144` value before running docker-compose. Otherwise ElasticSearch won't start! More information can be found [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_windows_with_docker_desktop_wsl_2_backend).
 
 ### MacOS installation guide
 Official documentation how to install Docker in MacOS can be found [here](https://docs.docker.com/desktop/install/mac-install/).
 An excellent and easy to follow guide can be found also [here](https://runnable.com/docker/install-docker-on-macos).
 
-__Important!!!__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! The issue is described in more details [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_macos_with_docker_for_mac).
+__Important!!!__ It is necessary to set `vm.max_map_count=262144` value before running docker-compose. Otherwise ElasticSearch won't start! More information can be found [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_macos_with_docker_for_mac).
 
 ### Linux
 You are an advanced user, a king, a queen of computers, if you will. Surely you don't need a step-by-step guide to tell you how to install stuff :smirk:
