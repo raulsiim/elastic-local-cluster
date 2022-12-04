@@ -10,7 +10,7 @@ The intention behind this repository was to be able to spawn ELK local testing e
 # Prerequsites
 Local computer must have Docker and Docker Compose installed.
 
-## Verify Docker installation
+## Verifying Docker installation
 Open a terminal and run commands:
 ```
 $ docker --version
@@ -27,19 +27,21 @@ docker-compose version 1.29.2, build unknown
 ```
 
 ## Windows installation instructions
-Official documentation on how to install Docker on Windows OS can be found [here](https://docs.docker.com/desktop/install/windows-install/)
-An excellent and easy to follow guide can be found also [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows)
+Official documentation on how to install Docker on Windows OS can be found [here](https://docs.docker.com/desktop/install/windows-install/).
+An excellent and easy to follow guide can be found also [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows).
 
 ## MacOS installation guide
 Official documentation how to install Docker in MacOS can be found [here](https://docs.docker.com/desktop/install/mac-install/).
-An excellent and easy to follow guide can be found also [here](https://runnable.com/docker/install-docker-on-macos)
+An excellent and easy to follow guide can be found also [here](https://runnable.com/docker/install-docker-on-macos).
 
 ## Linux
-You are an advanced user, a king, a queen of computers, if you will. Surely you don't need a step-by-step guide to tell you how to install stuff :) 
+You are an advanced user, a king, a queen of computers, if you will. Surely you don't need a step-by-step guide to tell you how to install stuff :smirk:
 
-# Managing the service
+# Managing the services
+For things to run smoodly it is required to start `cluster01` first. `cluster01.yml` has configuration to start the network named `elknet` and other containers connect to that network.
+
 ## Starting the services
-```sh
+```
 $ docker-compose -f cluster01.yml -p cluster01 up -d
 $ docker-compose -f cluster02.yml -p cluster02 up -d
 $ docker-compose -f logstash.yml -p logstash up -d
@@ -47,7 +49,7 @@ $ docker-compose -f logstash.yml -p logstash up -d
 
 ## Stopping the services
 Depending on what was started, to stop services:
-```sh
+```
 $ docker-compose -f cluster02.yml -p cluster02 down
 $ docker-compose -f logstash.yml -p logstash down
 $ docker-compose -f cluster01.yml -p cluster01 down
