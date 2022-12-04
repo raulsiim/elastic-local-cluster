@@ -7,9 +7,9 @@ The predecessor of ElasticSearch was called Compass. It was first released on 20
 
 # Using this repository
 The intention behind this repository was to be able to spawn ELK local testing environment fast and without any extra hassle.
-This repository contains configuration to run testing ELK clusters on __Docker__
+This repository contains configuration to test ELK clusters on __Docker__
 
-To start using `docker-compose` configuration provided by this repository it is recommended to clone (`git clone https://github.com/raulsiim/elastic-local-cluster.git`) the repository to a local computer or download the contents of this repo by other means.
+To start using `docker-compose` configuration provided by this repository, it is recommended to clone (`git clone https://github.com/raulsiim/elastic-local-cluster.git`) the repository to a local computer or download the contents of this repo by other means.
 Docker compose configuration is using `logstash` sub-folders, thus the folder (including sub-folders) must be present in the root folder where docker-compose files are copied.
 
 ## Installing prerequsites
@@ -33,20 +33,20 @@ docker-compose version 1.29.2, build unknown
 
 ### Windows installation instructions
 Official documentation on how to install Docker on Windows OS can be found [here](https://docs.docker.com/desktop/install/windows-install/).
-An excellent and easy to follow guide can be found also [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows).
+An excellent and easy to follow guide can also be found [here](https://www.simplilearn.com/tutorials/docker-tutorial/install-docker-on-windows).
 
-__Important__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! More details is described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_windows_with_docker_desktop_wsl_2_backend).
+__Important!!!__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! The issue is described in more details [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_windows_with_docker_desktop_wsl_2_backend).
 
 ### MacOS installation guide
 Official documentation how to install Docker in MacOS can be found [here](https://docs.docker.com/desktop/install/mac-install/).
 An excellent and easy to follow guide can be found also [here](https://runnable.com/docker/install-docker-on-macos).
 
-__Important__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! For MacOS described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_macos_with_docker_for_mac).
+__Important!!!__ It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! The issue is described in more details [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_macos_with_docker_for_mac).
 
 ### Linux
 You are an advanced user, a king, a queen of computers, if you will. Surely you don't need a step-by-step guide to tell you how to install stuff :smirk:
 
-__An important hint__: It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! For Linux described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_linux).
+__An important hint!!!__: It is necessary to set `vm.max_map_count=262144` value. Otherwise ElasticSearch won't start! The issue is described in more details [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_linux).
 
 # Managing the services
 For things to run smoodly it is required to start `cluster01` first. `cluster01.yml` has configuration to start the network named `cluster01_default` and other containers connect to that network.
@@ -66,8 +66,9 @@ $ docker-compose -f logstash.yml -p logstash down
 $ docker-compose -f cluster01.yml -p cluster01 down
 ```
 # Accessing Kibana
-Hopefully everything started up and Kibana is responding on address: `localhost:5601`
-Username is: elastic
-Password is: elastic
+Hopefully everything started up and Kibana is responding on the address: `localhost:5601`. 
+
+__Username is: elastic__
+__Password is: elastic__
 
 Username and password can be changed in the `.env` file
