@@ -2,7 +2,7 @@
 
 
 # Fun fact
-The predecessor of ElasticSearch was called Compass. It was first released on 2004 and replaced with ElasticSearch on 2010.
+The predecessor of ElasticSearch was called Compass. It was first released on 2004 and replaced by ElasticSearch on 2010.
 
 
 # Using this repository
