@@ -14,6 +14,8 @@ services:
     environment:
       LS_JAVA_OPTS: -Xms256m -Xmx256m
       LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD}
+    mem_limit: ${MEM_LIMIT_LOGSTASH}
+    cpus: ${CPU_LIMIT_LOGSTASH}
 
 networks:
   default:

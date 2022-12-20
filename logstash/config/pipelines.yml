@@ -1,19 +1,5 @@
 # Logstash pipelines configuration
-- pipeline.id: p1
-  config.string: |
-    input {
-      file {
-        type => "log"
-        path => "/opt/app/logs/application.log"
-      }
-    }
-    output {
-      elasticsearch {
-        hosts => ["https://es01:9200"]
-        user => "elastic"
-        password => "elastic"
-        index => "logs-app-%{+YYYY.MM.dd}"
-        ssl => true
-        ssl_certificate_verification => false
-      }
-    }
+- pipeline.id: example-pipeline
+  path.config: "./pipeline/example-pipeline.conf"
+  pipeline.workers: 1
+  queue.type: persisted

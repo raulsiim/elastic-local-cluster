@@ -98,7 +98,8 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: ${MEM_LIMIT}
+    mem_limit: ${MEM_LIMIT_ES}
+    cpus: ${CPU_LIMIT_ES}
     ulimits:
       memlock:
         soft: -1
@@ -138,7 +139,8 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: ${MEM_LIMIT}
+    mem_limit: ${MEM_LIMIT_ES}
+    cpus: ${CPU_LIMIT_ES}
     ulimits:
       memlock:
         soft: -1
@@ -178,7 +180,8 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
-    mem_limit: ${MEM_LIMIT}
+    mem_limit: ${MEM_LIMIT_ES}
+    cpus: ${CPU_LIMIT_ES}
     ulimits:
       memlock:
         soft: -1
@@ -214,7 +217,8 @@ services:
       - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
       - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
       - xpack.encryptedSavedObjects.encryptionKey=48fj84ij8j8jtqnbäöüp93ur827ey7fy7ggf63f44131343647r8dudu
-    mem_limit: ${MEM_LIMIT}
+    mem_limit: ${MEM_LIMIT_ES}
+    cpus: ${CPU_LIMIT_ES}
     healthcheck:
       test:
         [
